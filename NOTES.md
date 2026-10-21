@@ -175,3 +175,13 @@ Strings replaced, and where:
 - SOP template copy (answer-als-sop-template.docx): file author changed from a staff name to "Answer ALS data team". Paragraph text had no name.
 - SOP example copy (AALS-SOP-005-V1 docx): the staff name on the Last Modified By line became "Answer ALS data team"; file author and last modified by became "Answer ALS data team"; the example SubjectUID became NEUxxxxxxxx in both places (the given value and the CASE- value), matching the CASE-NEUxxx form the same SOP uses later.
 - SOP example copy (AALS-SOP-005-V1 pdf): the same name and example SubjectUID replaced in the page text; the pdf author field set to "Answer ALS data team".
+
+## Lou mirror, 2026-10-21
+
+lou/ holds a copy of Lou's knowledge base pages, so program facts can come from Lou's own pages and nothing is synced by hand. Lou's pages also sit in a blob storage folder, but that folder cannot be opened to anonymous read: Azure sets anonymous read per container, never per folder, and the container also holds private data. So the GitHub Action .github/workflows/lou-mirror.yml copies the pages from the data-scripts repo instead.
+
+- Access is a read-only deploy key on the data-scripts repo, titled "agent-handbook lou mirror (read only)". Its private half is held only as the Actions secret LOU_SOURCE_KEY in this repo. It cannot push to data-scripts.
+- The Action runs daily and on demand. It copies every .md file under Lou/lou-data/ in data-scripts into lou/, keeping the subfolder names, and writes lou/INDEX.md with one raw URL per page. Other file types are not copied.
+- Links to the portal's backend host are rewritten to data.answerals.org, and links to files in blob storage become "(document on the portal)". Every other byte is as Lou has it. A guard then fails the run if a storage name, backend host or SAS signature is still in a page.
+- It commits only when a page changed. If the data-scripts checkout fails, lou/ is not touched and the last good copy stays.
+- lou/ and lou/INDEX.md are never edited by hand and are not kept on the board. Change a page in data-scripts and the next run picks it up.

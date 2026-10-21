@@ -1,0 +1,79 @@
+name: Lou mirror
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lou-mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout agent-handbook
+        uses: actions/checkout@v4.2.2
+        with:
+          path: handbook
+
+      - name: Checkout data-scripts
+        uses: actions/checkout@v4.2.2
+        with:
+          repository: Answer-ALS-Data/data-scripts
+          ref: main
+          ssh-key: ${{ secrets.LOU_SOURCE_KEY }}
+          persist-credentials: false
+          sparse-checkout: Lou/lou-data
+          path: source
+
+      - name: Copy Lou pages
+        run: |
+          set -euo pipefail
+          test -d source/Lou/lou-data
+          rm -rf handbook/lou
+          mkdir -p handbook/lou
+          rsync -a --prune-empty-dirs --include='*/' --include='*.md' --exclude='*' source/Lou/lou-data/ handbook/lou/
+
+      - name: Rewrite backend links
+        run: |
+          set -euo pipefail
+          find handbook/lou -type f -name '*.md' -exec sed -i -E \
+            -e 's#https?://[A-Za-z0-9-]+[.]azurewebsites[.]net/#https://data.answerals.org/#g' \
+            -e 's#https?://[A-Za-z0-9-]+[.]blob[.]core[.]windows[.]net/[^[:space:])"<>`]*#(document on the portal)#g' {} +
+
+      - name: Write INDEX.md
+        run: |
+          set -euo pipefail
+          cd handbook/lou
+          find . -type f -name '*.md' | sed 's#^\./##' | LC_ALL=C sort \
+            | python3 -c "import sys, urllib.parse; [print('https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/' + urllib.parse.quote(l.rstrip('\n'))) for l in sys.stdin]" \
+            > "$RUNNER_TEMP/INDEX.md"
+          mv "$RUNNER_TEMP/INDEX.md" INDEX.md
+          wc -l INDEX.md
+
+      - name: Guard
+        run: |
+          set -euo pipefail
+          if grep -rIil -E 'si[g]=|blob[.]core[.]windows[.]net|azurewebsites[.]net|answer[a]lsrelease|stdataportalpro[d]|stwpprod00[1]' handbook/lou; then
+            echo "A copied page holds a storage name, backend host or SAS signature; nothing is committed."
+            exit 1
+          fi
+
+      - name: Commit
+        run: |
+          set -euo pipefail
+          cd handbook
+          git add -A lou
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Mirror Lou pages"
+          git push
