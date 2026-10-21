@@ -52,8 +52,8 @@ The published package also holds CHANGES.md (the cleaning actions applied) and a
 
 ## What the dictionary does not cover
 
-The board's Release 2 validation found 18 delivered clinical columns that have no dictionary row (ALS TDI to fix). Treat a column that is not in the dictionary as undocumented, not as an error in the file.
+The Release 2 validation found 18 delivered clinical columns that have no dictionary row (ALS TDI to fix). Treat a column that is not in the dictionary as undocumented, not as an error in the file.
 
 ## Source
 
-TDI_data_dictionary.xlsx from the Release 2 re-delivery (clinical_data_package), the file names of the published Release 2 package, and the als-tdi topic decisions on the board.
+TDI_data_dictionary.xlsx from the Release 2 re-delivery (clinical_data_package), the file names of the published Release 2 package, and the ALS TDI curation decisions.

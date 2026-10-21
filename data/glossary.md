@@ -1,0 +1,81 @@
+# Glossary
+
+Terms the Answer ALS data team uses for its data files, one line each, in alphabetical order. Words only: no counts and no values from a data file.
+
+- AALS: short for Answer ALS. Also the prefix of Answer ALS SOP file names.
+- Accepted defect: a validation finding that is kept on purpose and written down with the reason, so the release ships with it.
+- ALS: amyotrophic lateral sclerosis, a motor neuron disease.
+- ALS TDI: the ALS Therapy Development Institute, which runs the ARC study and delivers its data for publication next to Answer ALS.
+- ALSFRS-R: the ALS Functional Rating Scale, Revised. Twelve items scored 0 to 4 and a total. Collected in clinic by Answer ALS and self-reported in ALS TDI.
+- ALSFRS slope: the rate of change of the ALSFRS-R total in points per month. The two cohorts compute it differently.
+- Answer ALS: a research program that collected clinical, genetic, molecular and cell line data from people with ALS and other motor neuron diseases, plus healthy controls.
+- ARC id: the numeric ALS TDI participant number (the Participant ID column of the ALS TDI clinical tables). It is the stable join key across ALS TDI releases.
+- ARC study: the ALS Research Collaborative, ALS TDI's longitudinal natural-history study, mostly reported from home through online surveys.
+- Availability flag: an index column that says whether a participant has a kind of data or material, such as HAS_GENOMICS or HasIPSC. Read as Yes against No or blank.
+- Branching logic: the dictionary column that says when a form field is asked.
+- Bundle: the files of a release that are versioned together and never changed in place, such as the index trio.
+- Card View: the portal Data Search screen that shows participants as cards.
+- Category: the top level of the portal side navigation, such as Participant or Inventory. Holds groups.
+- CDM: the OMOP Common Data Model. ALS TDI delivers OMOP in CDM v5.4.
+- Cell line: a line grown from a participant's cells, such as an iPSC line or a diMN line. In the sample mapping, Cell Line is the tissue or cell type a sample came from.
+- Clinical package: the curated clinical files of a release, one CSV per form or table, plus the dictionary.
+- Coded field: a dictionary field whose values are codes with labels, written "1, Yes | 2, No". The file holds the code.
+- Cohort: one study published on the portal, Answer ALS or ALS TDI. Inside a study it also means a participant group, such as cases or controls.
+- Crosswalk: the table that maps each ALS TDI index column name to its Answer ALS name and says how close the match is.
+- Curation: turning a raw drop into the clinical package by a fixed, committed script, so the result can be rebuilt from the raw files.
+- Data level: how processed an omics file is. Level 1 raw instrument output, level 2 mapped to a reference, level 3 per-participant processed, level 4 a matrix joining a cohort, level 5 a comparison between two groups.
+- Data table: the portal table view of the index. Its file (aals_dataportal_datatable.csv, als_tdi_dataportal_datatable.csv) is the index under the portal name, with the same bytes.
+- Day 0: the reference day for relative days. Answer ALS uses the screening visit, ALS TDI the sign up day.
+- Defect: a validation finding that something in a file is wrong, with who owns the fix.
+- Delivery: a package of files sent by a data provider, such as an ALS TDI clinical package or an Answer ALS raw clinical drop. It is checked before anything is built from it.
+- Delivery roster: a list of who receives a modality in a delivery, one record per participant. It sets availability, not timepoints.
+- Dictionary: the file that describes every column of the clinical forms: form, field name, label, type and coded values.
+- diMN: iPSC-derived motor neurons, the cells Answer ALS differentiated from iPSC lines for omics.
+- DUA: Data Use Agreement. A researcher signs it before getting controlled data from the portal.
+- Elements definition: the index schema file (ElementsDefinition) with one row per index column: name, display name, type, facet and field flags, range edges and description.
+- El Escorial: the revised El Escorial criteria for an ALS diagnosis: suspected, possible, probable (laboratory supported), probable, definite.
+- ExpansionHunter: the tool that measures repeat lengths, such as the C9orf72 and ATXN2 repeats, from whole genome sequencing.
+- Facet: an index column the portal offers as a filter, the lowest level of the side navigation. Facets = Yes in the elements definition.
+- Field: an index column shown in the portal data table. Field = Yes in the elements definition. In a dictionary, a field is one column of a form.
+- Form: one case report form of the Answer ALS clinical package, and its CSV file. ALS TDI calls the same thing a table.
+- GUID: the participant's global unique identifier. In Answer ALS it has no cohort prefix. In the ALS TDI clinical package the GUID column holds the prefixed form.
+- Group: the middle level of the portal side navigation, such as Demographics or Disease Status, holding facets.
+- Hierarchy tree: the index schema file (HierarchyTree) that sets how facets are grouped and ordered in the portal side navigation.
+- Index: the release index, one row per participant: availability flags, demographics, disease status and summary scores. The portal reads it.
+- Index trio: the release index, its elements definition and its hierarchy tree, versioned and released together.
+- Intron: in the splicing matrices, one row per intron cluster, named by its intron ID.
+- iPSC: induced pluripotent stem cell. iPSC lines were made from participant cells.
+- Joint VCF: a single variant file for a whole cohort, a level 4 genomics file.
+- Key events forms: the Answer ALS forms that record events rather than visits, such as Mortality and Tracheostomy. They have no Visit_Date.
+- Log form: a clinical form with one row per entry, not per visit, such as the medications log or family history log.
+- Modality: one omics data type: genomics, transcriptomics, proteomics or epigenomics.
+- Neuromine: the data portal that publishes Answer ALS and ALS TDI. It began as the Answer ALS Data Portal.
+- NYGC: New York Genome Center, which sequenced the Answer ALS genomes.
+- OMIC: a measurement from genomics, epigenomics, transcriptomics, proteomics or a related field.
+- OMOP: the Observational Medical Outcomes Partnership common data model. The clinical data again, in standard tables keyed by person_id, for tools that read OMOP.
+- Participant ID (ALS TDI clinical): the ARC id, a number.
+- Participant_ID (index): the cohort prefix CASE- or CTRL- followed by the GUID. The prefix is fixed at enrollment.
+- person_id: the OMOP row key for a person, made by the OMOP build. It joins OMOP tables to each other only.
+- person_source_value: the OMOP column that carries the source participant identifier, used to join OMOP back to the clinical files.
+- Placeholder: a literal such as NA, N/A or None that an export writes in an empty cell. Read as empty.
+- Portal: the website where releases are published and searched. See Neuromine.
+- Raw drop: a clinical export as it arrives, before curation.
+- Relative day: a date written as days before (-) or after (+) day 0. The clinical files hold no calendar dates.
+- Release: a numbered public version of a cohort's data, such as Release 8 of Answer ALS. File names write it as _rN.
+- Release notes: the document that says what changed in this release. The README says what stays true from release to release.
+- Sample ID: the name of one omics sample as used in the omics files.
+- Sample mapping: the file with one row per omics sample that ties each sample to its participant, vial, cell line and, for ALS TDI, its timepoint.
+- Screening visit: the first Answer ALS clinic visit, day 0 for relative days.
+- Sequestered participant: a participant whose data is withheld; their columns are removed from released files.
+- SHA256SUMS: a file listing the sha256 of each file in a folder, so a copy can be checked byte for byte.
+- SOP: standard operating procedure, a numbered document for one team process.
+- Splicing matrix: a level 4 file of intron cluster counts, one column per sample and one row per intron.
+- Staged: built and placed for publication but not yet public.
+- Staging listing: the inventory of omics files placed for release.
+- Sub-release: an internal build of a release, such as r8.1 or r8.3. It is a build label only and is never shown to data users.
+- SubjectUID: the Answer ALS clinical identifier for a participant before the cohort prefix is added. Participant_ID = prefix + SubjectUID.
+- subject_group_id: the Answer ALS study group code on the subjects form. It sets the CTRL- or CASE- prefix.
+- Table View: the portal Data Search screen that shows the index as a table, the data table.
+- Timepoint: the order of a participant's samples within one modality, counted from 1. ALS TDI marks genomics timepoints -G and transcriptomics -T.
+- Validation: checking a delivery or a release against its sources and rules before it moves on. A validation report lists defects only.
+- Vial ID: the biobank vial a sample came from.

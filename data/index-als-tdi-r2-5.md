@@ -12,7 +12,7 @@ The columns read the same way as on index-answer-als-r8.md:
 - Group: the facet group from the HierarchyTree, or "Data table only".
 - Meaning: the Description, cut to one sentence.
 
-For the original Release 2 name of each renamed column, see index-shared-columns.md or als-tdi/index/CROSSWALK.csv on the board.
+For the original Release 2 name of each renamed column, see index-shared-columns.md, which is taken from the crosswalk file CROSSWALK.csv.
 
 | Element Name | Display Name | Type | Facet | Field | Group | Meaning |
 |---|---|---|---|---|---|---|
@@ -91,4 +91,4 @@ The Values column holds the edges of the ranges the portal slider uses, not a vo
 
 ## Source
 
-als-tdi/index/r2.5/ALS_TDI_ElementsDefinition_r2.5.csv and ALS_TDI_HierarchyTree_r2.5.csv on the board.
+ALS_TDI_ElementsDefinition_r2.5.csv and ALS_TDI_HierarchyTree_r2.5.csv, the Release 2.5 schema files.

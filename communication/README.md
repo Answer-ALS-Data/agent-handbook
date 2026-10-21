@@ -8,7 +8,6 @@ Reusable text for the messages the team sends again and again. Each template giv
 - Email from a team member's own address: partner outreach and meeting follow-ups, where a person, not the mailbox, owns the relationship.
 - DocuSign: the Data Use Agreement only. Never send other content through it.
 - The Neuromine portal pages: release notes, the README and public documents. A message points to them; it does not copy them.
-- Talks and office hours: program updates and data walkthroughs, built from the outlines in talks/.
 
 ## Tone
 
@@ -34,7 +33,7 @@ Every message follows the same five parts:
 Draft the reply, then hand it to the right role before it goes out when the message:
 
 - decides or hints at an access decision, or touches commercial use: the Data Access Committee.
-- says a release is public, gives a release date or quotes a count not on the programs/ pages: the data owner.
+- says a release is public, gives a release date or quotes a count not quoted from a Lou page (lou/INDEX.md): the data owner.
 - reports a possible privacy problem, such as identifiable information in a file: [Privacy escalation role], the same day.
 - interprets DUA terms or any legal question: [Legal escalation role].
 - comes from a partner, funder or the press: the program lead.
@@ -51,6 +50,5 @@ Draft the reply, then hand it to the right role before it goes out when the mess
 ## Files
 
 - email/: one template per message type. Each has When to use, Subject, Body and Fill in.
-- talks/: slide by slide outlines for a program update and a data walkthrough, in the deck layouts from design/README.md.
 
 Fields in square brackets are filled per message. Fields that need a fact the team has not settled yet are listed in NOTES.md.

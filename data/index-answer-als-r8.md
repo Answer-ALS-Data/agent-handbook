@@ -109,7 +109,7 @@ Taken from the Description text of the definition file. These are the categories
 | Genomic_Sequencing_DNA_Source | Blood, iPSC |
 | WGS_Sequencing_Protocol_Used | TruSeq PCR-Free, TruSeq Nano (PCR dependent) |
 
-The HAS_ columns, IS_DECEASED, the onset flags and the For_Sale flags are availability or yes/no flags. Their exact codes (Yes/No or Yes/blank) are not written in the definition file; see index-shared-columns.md for what the board has recorded.
+The HAS_ columns, IS_DECEASED, the onset flags and the For_Sale flags are availability or yes/no flags. Their exact codes (Yes/No or Yes/blank) are not written in the definition file; see index-shared-columns.md for what has been recorded.
 
 ## Facet ranges
 
@@ -131,4 +131,4 @@ The Values column of the definition file does not hold a vocabulary. For numeric
 
 ## Source
 
-answer-als/index/r8/ElementsDefinition_r8.csv and HierarchyTree_r8.csv on the board, the r8.3 schema files.
+ElementsDefinition_r8.csv and HierarchyTree_r8.csv, the Release 8 schema files.

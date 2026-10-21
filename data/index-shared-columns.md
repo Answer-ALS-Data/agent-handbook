@@ -47,4 +47,4 @@ The other 14 ALS TDI columns have no Answer ALS match and keep their ALS TDI nam
 
 ## Source
 
-als-tdi/index/CROSSWALK.csv (names and match type) and als-tdi/index/NOTES.md (vocabulary differences) on the board.
+CROSSWALK.csv (names and match type) and the notes of the ALS TDI Release 2.5 build (vocabulary differences).

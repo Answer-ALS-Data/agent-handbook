@@ -29,6 +29,6 @@ Would you be open to a 30 minute call in the next few weeks to talk it through? 
 - [Idea in a few words]: for example "shared splicing data".
 - [First name]: the contact's first name.
 - [How you know of them]: one real, checkable reason, such as "I read your recent paper on motor neuron splicing." Delete it if there is none.
-- [The proposal]: two or three sentences on the one thing you propose and why it helps them. Facts about our data come from the programs/ pages only.
+- [The proposal]: two or three sentences on the one thing you propose and why it helps them. Facts about our data come from the Lou pages (lou/INDEX.md) only, quoted.
 - [Proposed times]: two or three slots, or "I can work around your calendar."
 - [Sender name]: the first name of the person sending.

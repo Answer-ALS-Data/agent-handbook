@@ -29,10 +29,10 @@ Choices:
 
 - Templates follow the Lou training documents for how access works: the DUA request on the Datasets tab, screening by the team, Data Access Committee review, DocuSign after approval, then the team countersigns. Their words (Datasets tab, Download Data, "How to download Big Data?", Learning Center, Issue Log) are used so users see the same terms in email and on the portal.
 - Links in templates are only public URLs from answer-als/links/link-registry.csv marked needs_update=N: dataportal.answerals.org, its /datasets and /learning-center pages, the standardized-omop GitHub repo and data@answerals.org. The release notes pages are still marked for update, so the release announcement leaves that link as a field.
-- Counts in examples are only those on the programs/ pages (for example the 1,047 clinical participants of Release 8).
+- Counts in examples are only those on the programs/ pages (for example the 1,047 clinical participants of Release 8). (programs/ removed 2026-10-21; counts are now quoted from a Lou page.)
 - Escalation is by role: the Data Access Committee for access and commercial use, the data owner for release status and counts, the program lead for partners, funders and the press. The privacy and legal contacts are not named anywhere on the board, so they are fields.
 - The Lou training documents name individual staff addresses; the templates use only data@answerals.org and roles.
-- Talk outlines use the Title slide and Content slide layouts from design/README.md, with the closing slide on the Title slide pattern.
+- Talk outlines use the Title slide and Content slide layouts from design/README.md, with the closing slide on the Title slide pattern. (talks/ removed 2026-10-21.)
 - Each email template has the headings When to use, Subject, Body and Fill in. check.py reads those headings and looks for exclamation marks inside Body only.
 - The one review cadence the documents give ("three times a week") is kept as a field to confirm, not written as fact.
 
@@ -45,7 +45,7 @@ Facts the team has not settled, to fill once and then keep:
 - [Standard bug reply time]: the usual time to a first real answer on a bug report (bug-or-data-issue-acknowledged.md).
 - [Privacy escalation role]: who takes a possible privacy problem the same day (communication/README.md, bug-or-data-issue-acknowledged.md).
 - [Legal escalation role]: who answers DUA terms and legal questions (communication/README.md).
-- [Usage figure], [One sentence on use, from a published figure only]: a published usage number, such as approved users (program-update-outline.md). None is in the handbook yet.
+- [Usage figure], [One sentence on use, from a published figure only]: a published usage number, such as approved users (program-update-outline.md). None is in the handbook yet. (Removed 2026-10-21 with talks/.)
 
 Filled per message:
 
@@ -56,7 +56,7 @@ Filled per message:
 - Partner: [Partner organization], [Idea in a few words], [How you know of them], [The proposal], [Proposed times].
 - Meeting: [Meeting name], [Meeting date], [Decision], [Owner], [Action], [Due date], [Open question].
 - Bug or data issue: [The problem], [Who is looking], [What to do meanwhile], [One ask], [Reply-by date].
-- Talks: [Talk date], [live or staged], [Participant count], [One sentence on the state of the program today], [The biggest change in the release, as a sentence], [One sentence on which data types grew], [The next milestone and when], [One line the audience should remember], [One sentence on what the program is, from programs/].
+- Talks: [Talk date], [live or staged], [Participant count], [One sentence on the state of the program today], [The biggest change in the release, as a sentence], [One sentence on which data types grew], [The next milestone and when], [One line the audience should remember], [One sentence on what the program is, from programs/]. (Removed 2026-10-21 with talks/.)
 
 ## Schema pages, 2026-10-20
 
@@ -126,7 +126,7 @@ Choices:
 ## Menu and tasks, 2026-10-20
 
 - The menu is a bullet list, no numbers, as the ticket asks. Each line reads "- Option (tasks/page.md): description" so the agent sees which page to open and check.py can tie each option to its page.
-- Option names follow the ticket wording with a capital first letter: Draft an email, Build a slide deck, Write a memo or one-pager, Create an SOP, Answer a question about the data files, Answer a question about a program, Review a draft against the house style.
+- Option names follow the ticket wording with a capital first letter: Draft an email, Build a slide deck, Write a memo or one-pager, Create an SOP, Answer a question about the data files, Answer a question about a program, Review a draft against the house style. (Replaced 2026-10-21 by the six option menu below.)
 - Descriptions say what the person gets back, not how the agent works, in one line each.
 - The README section ends with one line for requests that fit no option, matching the How to start rule in AGENTS.md.
 - AGENTS.md keeps its old opening line ("Read this first. Then read the folder your task touches.") after the new section, since the ticket allows no other change there.
@@ -145,7 +145,7 @@ Choices:
 - Step numbers under Procedures are fixed as 4.n in the template's numbering, so the page says to keep all five sections in order.
 - The house rules are the ones the finished SOPs follow. The 700 to 1,000 word budget is the ALS TDI SOP's; the older Answer ALS SOPs are shorter (005 and 006 are about 350 words). The page says not to pad a short process.
 - The step shape (Inputs, Steps, Outputs, Checks) is named as ALS TDI SOP-001 uses it, as a pattern, not a rule.
-- Neuromine is named as a program with the NEUROMINE- prefix because a finished SOP uses it, though it has no programs/ page.
+- Neuromine is named as a program with the NEUROMINE- prefix because a finished SOP uses it, though it has no programs/ page. (programs/ removed 2026-10-21.)
 
 Publishing (resolved when the repo went public, see Public repo guard below):
 
@@ -166,7 +166,7 @@ Choices:
 
 Strings replaced, and where:
 
-- programs/answer-als.md, Where things live: the two lines naming the release storage account and its container, and the portal storage account and its container, became one line saying release files and documents are reached through the portal and the README links, without naming storage.
+- programs/answer-als.md, Where things live: the two lines naming the release storage account and its container, and the portal storage account and its container, became one line saying release files and documents are reached through the portal and the README links, without naming storage. (Removed 2026-10-21 with programs/.)
 - design/templates/deck-template.md, docx-templates.md and sop-template.md, Files line: the absolute data root paths for both devices and the board device name became "under the data root at answer-als/agent-handbook/v1/templates/", plus where the files sit in the GitHub repo.
 - design/tokens.json, source: the absolute path of the Variant Tool checkout became "Variant Tool docs/design/tokens.css".
 - communication/email/data-question-reply.md: the cell line vendor link (a link registry host) became the vendor named, with its catalog named, not linked.
@@ -185,3 +185,40 @@ lou/ holds a copy of Lou's knowledge base pages, so program facts can come from 
 - Links to the portal's backend host are rewritten to data.answerals.org, and links to files in blob storage become "(document on the portal)". Every other byte is as Lou has it. A guard then fails the run if a storage name, backend host or SAS signature is still in a page.
 - It commits only when a page changed. If the data-scripts checkout fails, lou/ is not touched and the last good copy stays.
 - lou/ and lou/INDEX.md are never edited by hand and are not kept on the board. Change a page in data-scripts and the next run picks it up.
+
+## Data domain, 2026-10-21
+
+schemas/ became data/ (git mv, the eight pages kept) and gained a glossary, the two clinical dictionaries in full, naming conventions and validation checks. Inputs: the Answer ALS clinical dictionary CSV and the ALS TDI data dictionary xlsx (dictionary rows only), the Answer ALS data submission and naming SOP, the SOP masters (Definitions sections), the Index Validation notes, the release file names in the index schema folders, and the check scripts and validation reports of both cohorts (what is compared and the pass rule only). No data row was read and no count or value from a data file was copied.
+
+Choices:
+
+- Lift-out clean: nothing under data/ links to design/, communication/ or tasks/, names a drive or volume path, a ticket id, the board, a topic folder or a brain row. The old pages had "on the board", topic notes and a brain row in their Source lines; those were reworded to name the file or the decision only. The privacy line no longer points at programs/; it says published release-level counts come from the release notes.
+- data/README.md lists every file in data/ by its raw GitHub URL on main, the build script included. The overview, identifiers and join keys from the old README are kept below the list.
+- Dictionary pages are generated by data/build_dictionaries.py, never edited by hand. Each form gets a table of Field name, Label, Type and Coded values. Label is New Field Label for Answer ALS and Additional Notes for ALS TDI (the ALS TDI dictionary has no label column). Forms keep dictionary order, fields keep row order.
+- The Answer ALS dictionary passes 1,000 lines on one page, so it is split into three form groups: clinical assessments, diagnosis history and demographics, events logs labs and samples. dictionary-answer-als.md is then the list of forms with each one's field count and part page. The ALS TDI page fits on one page. A form not named in a group lands in an "other" part, so a new form is never dropped.
+- Text is made ASCII: curly quotes and dashes become plain ones, the multiplication sign becomes x, the greater-or-equal sign becomes >=. A pipe inside a cell is escaped as \| so a table stays intact; the codes read the same in a rendered page.
+- Two dictionary texts conflict with the page rules, so the builder rewrites them and the page header says so: a # sign right before a number (the FVC and SVC trial labels) becomes the word number, since # and digits read as a ticket id; a web link becomes "(web link in the dictionary file)", since the public-repo guard blocks hosts from the link registry (the ALS TDI voice score row links a PubMed Central article).
+- With no arguments the builder finds the dictionaries on the data root through board_check; in a lifted copy, pass --answer-als and --als-tdi. It writes ASCII with LF line ends, so two runs give the same bytes on any device.
+- check.py reads the dictionaries itself (not through the builder) to count rows per form, then compares with the table rows on the pages and the counts on the cohort page, and rebuilds the pages into a temp folder to compare bytes.
+- naming.md writes the Neuromine SOP prefix in words, because the prefix in capitals matches the identifier guard pattern NEU followed by six capitals. Omics paths are given as patterns with <Participant_ID>, never with the example identifiers the naming SOP uses.
+- validation.md gives no numbers from a data file. Rule parameters stay in words (a one or two day shift, the Healthy Control code).
+
+Found and not found:
+
+- The naming SOP never names Answer ALS OMOP release files; naming.md says that is not settled.
+- No written pass rule was found for the Answer ALS sample mapping or for a delivery of Answer ALS omics files; validation.md covers the ALS TDI sample mapping and the splicing release only.
+- The Index Validation notes list cross-column rules for the Answer ALS index without saying which script runs them; validation.md lists them as release checks on the index.
+- The answer-als and als-tdi decisions give no glossary definition for "sub-release" or "bundle"; both are written from how the decisions use them.
+
+## Handbook rework, 2026-10-21
+
+The handbook is trimmed to four things: SOPs, user emails, agent instructions and output practice, and the data domain. Agents cannot browse GitHub folders, so every page is fetched by raw URL. Program facts now come from the mirrored Lou pages in lou/. The operator approved the trim on 2026-10-21.
+
+- Removed: programs/answer-als.md, programs/als-tdi.md, tasks/program-question.md, tasks/data-question.md and communication/talks/ (both outlines). Older lines above that name them are marked removed.
+- AGENTS.md is short: How to start, Where facts come from, How to write, Privacy, Templates, What not to do. The who-we-are text and the old "Read this first" line are gone. Counts may be repeated only when quoted from a Lou page.
+- The menu has six options: Draft an email, Create an SOP, Answer a question, Build a slide deck, Write a memo or one-pager, Review a draft against the house style. Each menu line links its task page by raw URL, so the agent can fetch it.
+- tasks/answer-question.md replaces the two question pages. Program, access, DUA, download, FAQ and contact questions go to the lou/ page that fits; column, form, file, naming and validation questions go to data/.
+- Every Read first entry is a raw URL. lou/INDEX.md is linked though it exists on GitHub only. The built templates are fetched in Steps, not Read first, because they are not on the board.
+- Every task page has a Steps line saying to use the template as it is and not restyle it. AGENTS.md says templates are never restyled or rebuilt, so the task pages no longer tell an agent to run a build script.
+- README.md Full index lists every file in the GitHub repo by raw URL, one per line, grouped by folder, with lou/INDEX.md as the one entry for lou/. It includes the files that exist on GitHub only (the built templates, the cleaned SOP copies, CHANGELOG.md and .gitignore). Spaces in a file name are written %20.
+- CLAUDE.md is one line pointing at AGENTS.md, for agents that read CLAUDE.md first.

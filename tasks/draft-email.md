@@ -6,18 +6,18 @@ A ready-to-send email to a user, partner or the team, written in the house tone 
 
 ## Read first
 
-- AGENTS.md
-- communication/README.md
-- programs/answer-als.md
-- programs/als-tdi.md
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/AGENTS.md
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/communication/README.md
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/INDEX.md
 
 ## Steps
 
 1. If the person did not say who the email is for, what it answers and which program it is about, ask for those three things.
-2. Pick the template in communication/email/ whose When to use matches the request. If none fits, use the Response shape in communication/README.md.
-3. Fill every bracketed field from what the person gave you and from programs/. If a fact is missing, leave the field in brackets and tell the person.
-4. Check the When to escalate list in communication/README.md. If the email hits one, say which role must see it before it goes out.
-5. Write the subject line and the body. Keep the template's shape and the writing rules in AGENTS.md.
+2. Pick the template in communication/email/ whose When to use matches the request and fetch it by its raw URL from the Full index in the README. If none fits, use the Response shape in communication/README.md.
+3. Use the template as it is. Do not restyle it.
+4. Fill every bracketed field from what the person gave you and from the Lou page that fits, quoted. If a fact is missing, leave the field in brackets and tell the person.
+5. Check the When to escalate list in communication/README.md. If the email hits one, say which role must see it before it goes out.
+6. Write the subject line and the body. Keep the template's shape and the writing rules in AGENTS.md.
 
 ## Hand back
 

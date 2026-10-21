@@ -1,6 +1,6 @@
 # Sample mapping files: columns
 
-A sample mapping file has one row per sample and ties each omics sample to its participant. There is one per cohort. This page is written from the header line of each file and the board's decisions. It describes columns, never values.
+A sample mapping file has one row per sample and ties each omics sample to its participant. There is one per cohort. This page is written from the header line of each file and the curation decisions. It describes columns, never values.
 
 ## Answer ALS
 
@@ -34,7 +34,7 @@ File: Sample_Mapping_File_ALS_TDI_R2.csv, the Release 2 final file. It mirrors t
 | Vial ID | The biobank vial the sample was taken from. |
 | Timepoint | The sample's timepoint for that participant and modality (rules below). |
 
-The current header has seven columns. The als-tdi topic notes also name GUID-Batch and Batch #; those are not in the Release 2 file header.
+The current header has seven columns. Earlier notes also name GUID-Batch and Batch #; those are not in the Release 2 file header.
 
 ## Timepoint rules (ALS TDI)
 
@@ -54,4 +54,4 @@ The meanings of the Answer ALS columns are read from their names and the matchin
 
 ## Source
 
-Header lines of Sample_Mapping_File_March_2026.csv (data-scripts output) and Sample_Mapping_File_ALS_TDI_R2.csv, and als-tdi/CONTEXT.md decisions of 2026-08-05, 2026-08-07, 2026-08-28 and 2026-09-23.
+Header lines of Sample_Mapping_File_March_2026.csv (data-scripts output) and Sample_Mapping_File_ALS_TDI_R2.csv, and the ALS TDI curation decisions of 2026-08-05, 2026-08-07, 2026-08-28 and 2026-09-23.

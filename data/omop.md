@@ -4,7 +4,7 @@ Both cohorts have their clinical data in the OMOP Common Data Model (CDM) as wel
 
 ## Answer ALS
 
-The owner's notebook etl.ipynb (data-scripts, Answer ALS/Data Curation/OMOP) builds the tables from the curated clinical forms, using the mapping workbook omop_mapping.xlsx beside it. No Answer ALS OMOP output is kept on the board; the Release 8 notes hold a placeholder for it.
+The owner's notebook etl.ipynb (data-scripts, Answer ALS/Data Curation/OMOP) builds the tables from the curated clinical forms, using the mapping workbook omop_mapping.xlsx beside it. No Answer ALS OMOP release file exists yet; the Release 8 notes hold a placeholder for it.
 
 Tables the notebook builds: PERSON, VISIT_OCCURRENCE, DRUG_EXPOSURE, CONDITION_OCCURRENCE, PROCEDURE_OCCURRENCE.
 
@@ -45,7 +45,7 @@ The workbook and the notebook text disagree on the concept for raceamin (America
 
 ## ALS TDI
 
-ALS TDI delivers its own OMOP tables in CDM v5.4 with Release 2. The board publishes them unchanged with a SHA256SUMS file. Nine tables:
+ALS TDI delivers its own OMOP tables in CDM v5.4 with Release 2. They are published unchanged with a SHA256SUMS file. Nine tables:
 
 | Table | Columns |
 |---|---|
@@ -80,4 +80,4 @@ The clinical package uses only two prefixes, CASE- and CTRL-, joined to the GUID
 
 ## Source
 
-omop_mapping.xlsx and the markdown cells of etl.ipynb in data-scripts (read only), the header lines of the nine ALS TDI Release 2 OMOP files, brain row 29 and the als-tdi decision of 2026-09-18.
+omop_mapping.xlsx and the markdown cells of etl.ipynb in data-scripts (read only), the header lines of the nine ALS TDI Release 2 OMOP files, the ALS TDI participant table layout and the ALS TDI curation decision of 2026-09-18.
