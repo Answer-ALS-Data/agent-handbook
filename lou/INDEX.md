@@ -16,7 +16,6 @@ https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/traini
 https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/training-documents/Research%20mentorship%20program.md
 https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/training-documents/Support%20and%20community%20resources.md
 https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/training-documents/WGS%20variant%20report%20tool.md
-https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/training-documents/mirror-test.md
 https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/website-corpus/data-information.md
 https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/website-corpus/datasets.md
 https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/lou/website-corpus/docs/doc-answer-als-data-level-descriptions_wsize_complete-091522.md
