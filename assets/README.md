@@ -1,0 +1,14 @@
+# Assets
+
+Templates and sample files, one set per format. Fetch each by its raw URL. Fill a template in place; never restyle or rebuild it.
+
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-template.docx: the Word template, built by scripts/build_word.py. Rules in references/word.md.
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-sample.docx: a Word sample showing every recipe in references/word.md, with example numbers.
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-sample-figure-1.png: the chart in the Word sample and in the Markdown sample, built by scripts/build_markdown_figure.py with the Word chart recipe (the same bytes scripts/build_word.py embeds).
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-template.pptx: the PowerPoint template, built by scripts/build_powerpoint.py: the eight layouts and one guide slide per layout, whose text and notes say what goes where. Drop the guide slides before you add your own. Rules in references/powerpoint.md.
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-sample.pptx: a short PowerPoint sample using every layout and helper in references/powerpoint.md: a numbered list, a table, a callout, a native chart and a picture.
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-template.xlsx: the Excel template, built by scripts/build_excel.py: the Answer ALS named styles, theme and one formatted sheet named Sheet1 to rename and fill. Rules in references/excel.md.
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-sample.xlsx: an Excel sample using every helper in references/excel.md: two data sheets, each with a table, a total row, a native chart and source lines, and a Notes sheet, with example numbers. Its formulas carry cached values, so Protected View shows them.
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-sample.md: the Markdown sample, written by hand, showing every rule in references/markdown.md. It is the file scripts/check_md.py must pass. Its figure is answer-als-sample-figure-1.png beside it.
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-report.html: the HTML template and sample in one file, written by hand. Its `<style>` block is the reference stylesheet every Answer ALS HTML page starts with, and it is the file scripts/check_html.py must pass. Rules in references/html.md.
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/assets/answer-als-sop-template.docx: the house SOP template, used as is (see SOPs in references/word.md).

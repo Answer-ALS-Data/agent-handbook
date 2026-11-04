@@ -9,7 +9,7 @@ Choices made where the first ticket left something open. Dated 2026-10-20.
 - Counts: only release-level counts that already appear in release notes or the board's notes are given. No count is broken down below the release level.
 - Storage: storage accounts and containers are not named, since the repo is public, and never linked with a SAS.
 - Who runs it: the pages name the Answer ALS Foundation, the data team and the data owner by role, not by person.
-- communication/ and schemas/ are named in README.md and AGENTS.md. communication/ was added by the communication kit and schemas/ by the schema pages (sections below).
+- communication/ and schemas/ are named in README.md and AGENTS.md. communication/ was added by the communication kit and schemas/ by the schema pages (sections below). (communication/ removed 2026-11-04; schemas/ is now data/.)
 - The repo is public in the Answer-ALS-Data organization since 2026-10-20. It holds the handbook pages and this file. The checker and the build report stay on the board.
 - check.py reads no data. It still calls board_check.data_path like the other checkers, so it skips only on a device with no data root in devices.json.
 
@@ -24,6 +24,8 @@ Choices made where the first ticket left something open. Dated 2026-10-20.
 - design/ is not pushed to the GitHub repo by this change; the ticket did not ask for it.
 
 ## Communication kit, 2026-10-20
+
+communication/ and its eight email templates were removed 2026-11-04 (see Two services below). The lines in this section are kept as history.
 
 Choices:
 
@@ -86,6 +88,8 @@ Found and not found:
 
 ## Deck template, 2026-10-20
 
+deck-template.md was removed 2026-11-04. build_deck_template.py and its deck were removed 2026-11-04 when the PowerPoint format replaced them (see PowerPoint format below).
+
 Inputs: design/tokens.json, design/README.md, the logo, talks/github-for-researchers/build_deck.py and theme.json, and the title and closing target screenshots in talks/reference/. No operator input.
 
 Choices:
@@ -104,6 +108,8 @@ Choices:
 - The built pptx lives only under the data root, like the talk deck. Hand edits there are lost on rebuild; the how-to says to copy the file before editing.
 
 ## Word templates, 2026-10-20
+
+docx-templates.md was removed 2026-11-04. build_docx_templates.py and the memo and one-pager templates were removed 2026-11-04, replaced by scripts/build_word.py (see Word format, 2026-11-04).
 
 Inputs: design/tokens.json, design/README.md and the page setup of ALSTDI-SOP-001-V1 (the board copy under the data root, read only): Letter, 1 inch margins, header and footer 0.5 inch from the edge, empty header, page number in the footer. No operator input. python-docx 1.2.0.
 
@@ -125,6 +131,8 @@ Choices:
 
 ## Menu and tasks, 2026-10-20
 
+The menu and tasks/ were removed 2026-11-04 (see Two services below). The lines in this section are kept as history.
+
 - The menu is a bullet list, no numbers, as the ticket asks. Each line reads "- Option (tasks/page.md): description" so the agent sees which page to open and check.py can tie each option to its page.
 - Option names follow the ticket wording with a capital first letter: Draft an email, Build a slide deck, Write a memo or one-pager, Create an SOP, Answer a question about the data files, Answer a question about a program, Review a draft against the house style. (Replaced 2026-10-21 by the six option menu below.)
 - Descriptions say what the person gets back, not how the agent works, in one line each.
@@ -135,6 +143,8 @@ Choices:
 - tasks/create-sop.md is a one-line placeholder until the SOP kit ticket writes it.
 
 ## SOP kit, 2026-10-20
+
+sop-template.md and tasks/create-sop.md were removed 2026-11-04. The house SOP template docx is published in assets/; the worked example stays on the data root and is no longer published (design/templates/ removed from the GitHub repo 2026-11-04).
 
 Inputs: the house SOP template, AALS-SOP-005-V1 (docx and pdf) and ALSTDI-SOP-001-V1, dropped by the operator. Only headings, tables and page setup were read with python-docx; no body text was copied into the handbook.
 
@@ -167,9 +177,9 @@ Choices:
 Strings replaced, and where:
 
 - programs/answer-als.md, Where things live: the two lines naming the release storage account and its container, and the portal storage account and its container, became one line saying release files and documents are reached through the portal and the README links, without naming storage. (Removed 2026-10-21 with programs/.)
-- design/templates/deck-template.md, docx-templates.md and sop-template.md, Files line: the absolute data root paths for both devices and the board device name became "under the data root at answer-als/agent-handbook/v1/templates/", plus where the files sit in the GitHub repo.
+- design/templates/deck-template.md, docx-templates.md and sop-template.md, Files line: the absolute data root paths for both devices and the board device name became "under the data root at answer-als/agent-handbook/v1/templates/", plus where the files sit in the GitHub repo. (Removed 2026-11-04.)
 - design/tokens.json, source: the absolute path of the Variant Tool checkout became "Variant Tool docs/design/tokens.css".
-- communication/email/data-question-reply.md: the cell line vendor link (a link registry host) became the vendor named, with its catalog named, not linked.
+- communication/email/data-question-reply.md: the cell line vendor link (a link registry host) became the vendor named, with its catalog named, not linked. (Removed 2026-11-04.)
 - schemas/index-answer-als-r8.md, has_discordant_sample: the lab named after a person became "MIT".
 - NOTES.md: two ticket ids, one absolute path, the board device name and the vendor host removed; the Storage and repo lines now say the repo is public.
 - SOP template copy (answer-als-sop-template.docx): file author changed from a staff name to "Answer ALS data team". Paragraph text had no name.
@@ -212,6 +222,8 @@ Found and not found:
 
 ## Handbook rework, 2026-10-21
 
+The menu, tasks/, communication/ and the README Full index from this section were removed 2026-11-04 (see Two services below).
+
 The handbook is trimmed to four things: SOPs, user emails, agent instructions and output practice, and the data domain. Agents cannot browse GitHub folders, so every page is fetched by raw URL. Program facts now come from the mirrored Lou pages in lou/. The operator approved the trim on 2026-10-21.
 
 - Removed: programs/answer-als.md, programs/als-tdi.md, tasks/program-question.md, tasks/data-question.md and communication/talks/ (both outlines). Older lines above that name them are marked removed.
@@ -222,3 +234,94 @@ The handbook is trimmed to four things: SOPs, user emails, agent instructions an
 - Every task page has a Steps line saying to use the template as it is and not restyle it. AGENTS.md says templates are never restyled or rebuilt, so the task pages no longer tell an agent to run a build script.
 - README.md Full index lists every file in the GitHub repo by raw URL, one per line, grouped by folder, with lou/INDEX.md as the one entry for lou/. It includes the files that exist on GitHub only (the built templates, the cleaned SOP copies, CHANGELOG.md and .gitignore). Spaces in a file name are written %20.
 - CLAUDE.md is one line pointing at AGENTS.md, for agents that read CLAUDE.md first.
+
+## Two services, 2026-11-04
+
+The operator decided on 2026-11-04 that the handbook serves two things only: the design (branding) and the rules for agents working on the Neuromine data set. The rest was never used.
+
+- Removed: communication/ (README.md and the eight email templates), tasks/ (README.md and the six task pages), design/templates/sop-template.md, deck-template.md and docx-templates.md, the README menu and the README Full index.
+- Kept: design/ (with build_deck_template.py and build_docx_templates.py until the design skill replaces them), data/, the SOP template docx and the worked example on the data root, .github/ and the Lou mirror.
+- AGENTS.md has two sections only: Design, then Neuromine data rules (where facts come from, privacy, how to write with the banned word list, what not to do). The Design section points at design/README.md by raw URL until the design skill's SKILL.md lands.
+- README.md is one intro line, the line to paste, and two short sections, Design and Neuromine data, each naming its entry page by raw URL.
+- CLAUDE.md is unchanged.
+- TEST.md still records the 2026-10-21 run against the old menu; a later rewrite replaces it.
+
+## Design skill, 2026-11-04
+
+The design service now works as an Agent Skill. An agent fetches SKILL.md, reads references/brand.md, reads the one format file, starts from the matching template in assets/ and runs the checker.
+
+- SKILL.md at the root: frontmatter name answer-als-document-skill and a description, What it covers and How to use it. Every link is a raw URL under main. The format files word.md, powerpoint.md, excel.md and html.md are listed as coming; each lands with its template and checker.
+- references/brand.md holds the brand rules in thirteen sections: Palette, Typography, Headings, Body text, Tables, Header and footer, Cover page, Callouts, Lists, Charts, Page setup, Dates, Writing. design/README.md is now a pointer to it. What moved and what was added is in design/DECISIONS.md.
+- Charts gained a Sequential and a Diverging series built from the brand blue steps and the error reds; tokens.json has them as chart_seq_1 to 6 and chart_div_1 to 6.
+- scripts/prose.py: find_banned(text) returns (word, snippet) pairs for the em dash, en dash and the banned words and phrases in brand.md. The banned list in brand.md is written in inline code so the page can name the words; the board check skips inline code.
+- scripts/check_all.py runs every scripts/check_<ext>.py against assets/*sample*.<ext> and exits 0 when all pass or skip. With no checkers yet it prints SKIP and exits 0.
+- AGENTS.md Design and README.md Design now point at SKILL.md. The line above that says AGENTS.md points at design/README.md is out of date.
+
+## Word format, 2026-11-04
+
+The design skill has its Word format, in the shape of the DWD document skill: references/word.md, scripts/build_word.py (builds the template and a sample), scripts/check_docx.py and assets/README.md.
+
+- references/word.md has the DWD sections (Start from the template, Starter, Styles, Fonts, Page setup, Header and footer, Cover page recipe, Table recipe, Callout recipe, Lists, Charts, Voice, Checklist before sending) plus SOPs, with the Answer ALS values from brand.md and tokens.json. No DWD name, color or font.
+- Styles: Title 20pt bold brand blue; Subtitle 14pt Text 2; Cover Eyebrow and Cover Date, Caption, Header and Footer in Courier New 9pt; Heading 1 14pt Ink, Heading 2 11pt Ink, Heading 3 11pt Text 2, all bold Helvetica Neue; Normal 11pt Text. brand.md names only two heading levels below the title, so Heading 3 takes Text 2 to read apart from Heading 2 at the same size. Only the sizes 20, 14, 11 and 9 are used.
+- Body font, size and color sit in docDefaults and Normal is empty, so the Answer ALS Table style's Text 2 cell color is not overridden by Normal in Word.
+- The cover band is one PNG (brand blue, 8.5 by 2.75 in, the logo pasted at 0.75 in high, 1 in from the left edge and 0.5 in from the top) anchored behind the text at the page corner in the first-page header. The logo appears nowhere else. On a white cover the eyebrow reads Answer ALS and there is no logo.
+- Header: "Answer ALS" as plain text, a tab, STYLEREF Heading 1. brand.md has no header mark, so the DWD filled mark style was dropped; check_docx.py has no mark exemption.
+- Tables put the Caption under the table, as the DWD skill does and the checker expects; brand.md says above for other formats, and word.md says the format file wins.
+- Table header text is Ink on the light #F4F6FB fill, not Automatic: the DWD Automatic rule is for a dark fill.
+- check_docx.py also fails when the first Heading 1 has no page break before. Prose hits use scripts/prose.py; table cells with no letter are skipped as data.
+- The chart uses Arial in matplotlib (Helvetica Neue is not on Windows). Builds are byte stable on one device; a MacBook rebuild may differ in the chart bytes if its Arial or matplotlib differs, in which case check.py fails the sha256 match and the files must be rebuilt and REPORT.md updated there.
+- build_word.py writes to <data root>/answer-als/agent-handbook/v1/assets/ when the board's board_check.py is three folders up, else to assets/ beside scripts/ (the public repo case); an output folder can be given as the only argument.
+- scripts/check_all.py takes an optional folder; check.py runs it on the data root assets. A missing folder prints SKIP.
+- The memo and one-pager templates were deleted from the data root templates/ folder. The SOP template stays as is; on GitHub it moves from design/templates/ to assets/. The deck and the worked SOP example stay in design/templates/ until the PowerPoint format lands.
+- Not checked by eye: nobody opened the built files in Word on this ticket (no window may open). The operator should open answer-als-sample.docx and confirm the band and logo sit at the top of page 1, the header and footer show from page 2, and the table and chart look right.
+
+## PowerPoint format, 2026-11-04
+
+The design skill has its PowerPoint format, in the shape of the DWD document skill: references/powerpoint.md, scripts/aals_pptx.py (the helpers), scripts/build_powerpoint.py (builds the template and a sample) and scripts/check_deck.py. It replaces the 2026-10-20 deck template and build_deck_template.py.
+
+- Eight layouts: Title, Section, Title and Content, Two Content, Table, Chart, Picture, Closing. The DWD set plus Table, with its caption above the table as brand.md says.
+- Title and Closing are brand blue layouts with the white logo at 0.75 in from the top and left edges, 0.75 in high, the eyebrow (a placeholder, idx 15, for the program and event), a Tint 3 bar, the white 54pt headline and the Tint 3 22pt subline, the look of the old deck's title slide. The logo is a picture on these two layouts only; check.py fails if any other part of the file refers to it.
+- Content layouts are white with the 0.18 in brand blue strip, the headline 40pt bold in brand blue (brand.md Headings) and the footer: the deck name at left and the slide number at right, both Courier New 12pt, below a Rule line. brand.md says a content slide footer is the page number only; the DWD check list asks for the footer too, so powerpoint.md wins for PowerPoint.
+- Only the six slide sizes in brand.md are used: 22pt body level 1 and section text, 16pt level 2, tables and chart labels, 14pt eyebrow and captions, 12pt footer and page number.
+- The theme names Helvetica Neue for headings and body; Arial is the fallback a reader without it sees. Courier New is set by name for the footer, page number and date.
+- The callout is the brand.md callout: a Tint 1 box with a 3pt brand blue bar at its left edge. Bullets are round and brand blue at both levels.
+- The python-pptx default theme and notes theme carry gradient fills and shadows in their format scheme; the build replaces them with flat fills and empty effect lists, and check_deck.py and check.py fail on any gradient or shadow.
+- The template holds one guide slide per layout, each slide's text and notes its own instruction; powerpoint.md Starter drops them before adding slides. The sample is about building a deck with the skill, so every number in it comes from brand.md, not from a release.
+- Builds are byte stable (fixed core dates, fixed zip times, the embedded chart workbook rewritten the same way, the matplotlib picture saved without a Software tag). A MacBook rebuild may differ in the picture bytes if its Arial or matplotlib differs; rebuild there and update REPORT.md.
+- scripts/check_all.py maps check_deck.py to *sample*.pptx.
+- Not checked by eye: nobody opened the built files in PowerPoint on this ticket (no window may open). The operator should open answer-als-sample.pptx and confirm the logo and text sit clear on the two blue slides, nothing runs off a slide, and the table, chart and picture look right.
+
+## Markdown and HTML formats, 2026-11-04
+
+The design skill has its two text formats, in the shape of the DWD document skill: references/markdown.md and references/html.md, a hand-written sample of each in assets/ (answer-als-sample.md with answer-als-sample-figure-1.png, and answer-als-report.html), scripts/check_md.py, scripts/check_html.py and scripts/build_markdown_figure.py. No binaries are built; the samples and the PNG are committed.
+
+- Markdown: line 1 eyebrow `ANSWER ALS` in inline code, the title H1 on line 3, the italic subtitle and date on line 5. Everything else is the DWD rule set with the Answer ALS chart colors and a source line under each figure, as brand.md asks.
+- The Markdown figure has the same name as the Word sample chart. build_markdown_figure.py calls figure_png in build_word.py (split out of build_sample, no change in output), so both are the same bytes and one file serves both samples on GitHub. PUBLISH.md now copies it from the repo.
+- HTML: no link element at all. The DWD Google Fonts exception is gone; the stacks are "Helvetica Neue", Arial, sans-serif and "Courier New", monospace. Colors in :root are the brand.md values; check_html.py reads the brand hex list from design/tokens.json instead of a hardcoded list.
+- HTML follows brand.md where DWD differs: no rule under h1; h1 28px brand blue, h2 15px and h3 14px Ink, weight 600; body 14px at line height 1.6; table head on the light #F4F6FB fill with Ink text, 6px radius; callout with Tint 1 fill and 8px radius; round brand blue bullets; quotes with no italics; @page margin 1in and the page number in Courier New 9pt Placeholder.
+- The header mark is `<span class="mark">Answer ALS</span>` in plain Courier New Caption text, not a filled block, the same choice word.md made. The cover has a brand blue band with the white logo as a data URI, the only place the logo appears.
+- check_html.py builds its Windows browser fallback from SYSTEMDRIVE (or C:) so the file holds no absolute path for the public-repo guard.
+- check_all.py maps check_html.py to *report*.html (the HTML template and sample are one file) and now shows a checker's SKIP lines, such as print-render, under its PASS line.
+- The md sample links to an unnumbered H3 fragment: a fragment like a numbered H2 slug trips the public-repo guard's ticket id rule.
+- Print check: headless Chrome printed the report to 7 pages: the cover alone on page 1, each of the five sections on a new page, the 26 row table over two pages with its header repeated, page numbers from page 2. Nobody looked at it by eye.
+
+## Excel format, 2026-11-04
+
+The design skill has its Excel format, in the shape of the DWD document skill: references/excel.md, scripts/aals_excel.py (the helpers, the DWD signatures), scripts/build_excel.py (builds the template and a sample) and scripts/check_xlsx.py. The two built workbooks live on the data root and go to GitHub as assets/answer-als-template.xlsx and assets/answer-als-sample.xlsx.
+
+- Named styles: the seventeen sheet styles Answer ALS Title, Subtitle, Eyebrow, Date, Table Title, Header, Text, Text Wrap, Integer, Decimal, Percent, Total Label, Total Integer, Total Decimal, Total Percent, Caption and Note, plus Answer ALS Date Cell for a date column, kept from the DWD set so dates in a table still have a style. check_xlsx.py requires all eighteen.
+- Answer ALS Note is the source line: Helvetica Neue 9pt Caption color, on the row under a table caption or a figure caption ("Source: ..."), as brand.md asks for a source line under every chart. Captions are Courier New 9pt, as in Word.
+- The header row is brand blue #1F4FAE with fixed bold white text, not the light #F4F6FB head of brand.md and not the DWD Automatic font color. White on brand blue reads in Excel, LibreOffice and Google Sheets alike, so the DWD dark mode reason for Automatic does not apply. check_xlsx.py fails any other fill or text color.
+- Body cells are Text 2 #374151 with a #DFE3EB rule below; totals are Ink bold with a Border #8A9097 rule above (a rule a reader must see, per brand.md Contrast). Table title is Ink bold 11pt. The eyebrow reads ANSWER ALS, the print header Answer ALS. No logo in a workbook.
+- Sizes are the document sizes only: 20 title, 14 subtitle, 11 body and table, 9 eyebrow, date, caption, source line, print header and footer.
+- Charts: categorical chart_1 to chart_6 by default (they are also the theme accents), single brand blue for one series (a categorical chart with one series switches to it), sequential and diverging from tokens.json. Axis line and gridlines #D9E1EA, axis text #6A7683, legend at the top with overlay off. check.py fails if the aals_excel.py palettes differ from tokens.json.
+- Fonts name Helvetica Neue with the Swiss family, so Windows Excel shows Arial; Excel has no fallback list. The theme font scheme is Helvetica Neue too.
+- save writes each formula's computed value as its cached value (the DWD fix for Protected View blanks) and sets fullCalcOnLoad. The sample has 10 formula cells, all cached; check.py checks each one with data_only.
+- Builds are byte stable: fixed core dates and zip times. The sample numbers are made up and say so on every sheet.
+- scripts/check_all.py with no argument now looks in the data root assets folder for a sample not in assets/, so the docx, pptx and xlsx samples are checked there instead of skipped.
+- The public clone's .gitignore lists *.xlsx, so PUBLISH.md step 5 adds the two workbooks with git add -f by name.
+- Not checked by eye: nobody opened the workbooks in Excel on this ticket (no window may open). The operator should open answer-als-sample.xlsx from Downloads, confirm Protected View shows the numbers and both charts, the header row reads white on blue, and the charts sit between the source lines without covering them.
+
+## Republish, 2026-11-04
+
+The two-service handbook and the design skill went to GitHub in one push. communication/, tasks/ and design/templates/ were deleted there, whole. The SOP template moved to assets/; the worked SOP example is not published any more, since no page points at it. lou/, CHANGELOG.md (one new line) and .gitignore were kept.
