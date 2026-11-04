@@ -325,3 +325,9 @@ The design skill has its Excel format, in the shape of the DWD document skill: r
 ## Republish, 2026-11-04
 
 The two-service handbook and the design skill went to GitHub in one push. communication/, tasks/ and design/templates/ were deleted there, whole. The SOP template moved to assets/; the worked SOP example is not published any more, since no page points at it. lou/, CHANGELOG.md (one new line) and .gitignore were kept.
+
+## Design skill moved, 2026-11-04
+
+The design skill left this repo. It is now the Neuromine brand skill in its own public repo, https://github.com/Neuromine-Data/brand-skill, and agents fetch https://raw.githubusercontent.com/Neuromine-Data/brand-skill/main/SKILL.md for every document, deck, sheet, page, SOP or figure. SKILL.md, references/, scripts/, assets/ and design/ (the logo included) are gone from this repo, here and on GitHub. There is no second copy. This repo now serves the Neuromine data rules only: AGENTS.md, data/ and lou/.
+
+The Word, PowerPoint, Excel, Markdown, HTML, SOP and public-copy lines above are history. They describe the design skill as it was in this repo, not how it works now. The brand skill repo has its own notes.

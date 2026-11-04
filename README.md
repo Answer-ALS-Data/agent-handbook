@@ -1,6 +1,6 @@
 # agent-handbook
 
-This repo tells an AI agent how to follow the Answer ALS brand and how to work with the Neuromine data set; it never holds data.
+This repo tells an AI agent where to find the Neuromine brand and how to work with the Neuromine data set; it never holds data.
 
 ## Give this to an agent
 
@@ -8,7 +8,7 @@ Paste this line to the agent: Fetch https://raw.githubusercontent.com/Answer-ALS
 
 ## Design
 
-The brand for every document, deck, sheet, page or figure, as a design skill: https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/SKILL.md
+The brand for every document, deck, sheet, page, SOP or figure is the Neuromine brand skill: https://raw.githubusercontent.com/Neuromine-Data/brand-skill/main/SKILL.md
 
 ## Neuromine data
 

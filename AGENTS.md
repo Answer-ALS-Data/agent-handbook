@@ -2,7 +2,7 @@
 
 ## Design
 
-- Every document, deck, sheet, page or figure you make follows the brand. Fetch the design skill at https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/SKILL.md and follow it: read references/brand.md first, then the format file, and start from the template.
+- Every document, deck, sheet, page, SOP or figure you make follows the Neuromine brand skill. Fetch https://raw.githubusercontent.com/Neuromine-Data/brand-skill/main/SKILL.md and follow it.
 - Templates are used as they are. Never restyle them and never rebuild them. Fill them in place.
 - Do not restyle the brand and do not invent a look of your own.
 
