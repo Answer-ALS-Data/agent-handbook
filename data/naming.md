@@ -6,7 +6,7 @@ How Answer ALS and ALS TDI release files and folders are named. Names and patter
 
 - Release files carry the plain release suffix _r<N>, lower case r, before the extension: ReleaseIndex_r8.csv. ALS TDI adds its prefix: ALS_TDI_ReleaseIndex_r2.csv.
 - Internal sub-releases (r8.1, r8.2, r8.3) are build labels. They never appear in a released file name or in a document for data users; the released files of every build carry the plain _r<N>.
-- A bundle with a new shape gets its own decimal version in the file name, so the old bundle stays as it was. Example: the ALS TDI r2.5 trio, with renamed columns, next to the unchanged r2 trio.
+- A bundle with a new shape gets its own decimal version in the file name, so the old bundle stays as it was. Example: a trio with renamed columns gets _r<N>.5 next to the unchanged _r<N> trio.
 - In text for data users, write "Release 8" or "Release 2". Never r8.3, R8.3 or a similar label. Short forms R8 and R2 appear only in document file names (below).
 - The portal data table copy is named <cohort>_dataportal_datatable.csv and has the same bytes as the release index.
 

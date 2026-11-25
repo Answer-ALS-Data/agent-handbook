@@ -11,7 +11,7 @@ Every file in this folder, by raw URL, one line each.
 - https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/data/naming.md: file and folder naming for release files, the release suffix and wording rules, SOP file names and date forms.
 - https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/data/validation.md: what is checked on a delivery and on a release, and what passes.
 - https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/data/index-answer-als-r8.md: every Answer ALS Release 8 index column.
-- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/data/index-als-tdi-r2-5.md: every ALS TDI Release 2.5 index column.
+- https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/data/index-als-tdi-release-2.md: every ALS TDI Release 2 index column.
 - https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/data/index-shared-columns.md: the 25 shared index names and their vocabulary differences.
 - https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/data/clinical-answer-als.md: Answer ALS clinical forms, a map with key fields and codes.
 - https://raw.githubusercontent.com/Answer-ALS-Data/agent-handbook/main/data/clinical-als-tdi.md: ALS TDI clinical tables, a map with key fields and codes.
@@ -32,7 +32,7 @@ Each cohort publishes four kinds of file. They are separate files that share key
 
 | Piece | One row per | Answer ALS | ALS TDI | Page |
 |---|---|---|---|---|
-| Release index | participant | ReleaseIndex_r8.csv with ElementsDefinition_r8.csv and HierarchyTree_r8.csv | ALS_TDI_ReleaseIndex_r2 (staged) or r2.5 (renamed columns) with its two schema files | index-answer-als-r8.md, index-als-tdi-r2-5.md, index-shared-columns.md |
+| Release index | participant | ReleaseIndex_r8.csv with ElementsDefinition_r8.csv and HierarchyTree_r8.csv | ALS_TDI_ReleaseIndex_r2.csv with ALS_TDI_ElementsDefinition_r2.csv and ALS_TDI_HierarchyTree_r2.csv | index-answer-als-r8.md, index-als-tdi-release-2.md, index-shared-columns.md |
 | Clinical package | form entry or visit | 34 form CSVs and __Clinical_Dictionary_Sep_2026.csv | 18 TDI_*_V2 tables and TDI_data_dictionary | clinical-answer-als.md, clinical-als-tdi.md, dictionary-answer-als.md, dictionary-als-tdi.md |
 | Sample mapping | sample | Sample_Mapping_File_<Month>_<Year>.csv | Sample_Mapping_File_ALS_TDI_R2.csv | sample-mapping.md |
 | OMOP | OMOP record | built by the owner's ETL notebook | delivered by ALS TDI, CDM v5.4 | omop.md |
@@ -61,7 +61,7 @@ ALS TDI OMOP person_source_value is PREFIX_n, where PREFIX is CASE, CONTROL or A
 
 ## Comparing the two cohorts
 
-The two indexes share 25 column meanings. ALS TDI Release 2.5 uses the Answer ALS names for them, but values were not recoded. index-shared-columns.md says which can be compared as they stand.
+The two indexes share 25 column meanings. Most have a different name in each cohort (ALS TDI Release 2 keeps the ALS TDI names), and no value was recoded. index-shared-columns.md pairs the names and says which can be compared as they stand.
 
 ## Privacy line
 

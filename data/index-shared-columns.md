@@ -1,6 +1,6 @@
 # Index columns shared by Answer ALS and ALS TDI
 
-25 ALS TDI index columns have an Answer ALS Release 8 counterpart. In ALS TDI Release 2.5 they carry the Answer ALS name; in Release 2 (still the staged index) they carry the ALS TDI name. A shared name does not mean shared values: only names were changed, no value was recoded. This page tells you which columns you can put side by side and which need a recode first.
+25 ALS TDI index columns have an Answer ALS Release 8 counterpart. The names are not unified: ALS TDI Release 2 uses the ALS TDI names and Answer ALS Release 8 its own, and only 6 are spelled the same in both. A shared name does not mean shared values: no value was recoded. This page tells you which columns you can put side by side and which need a recode first.
 
 Compare means:
 
@@ -9,7 +9,7 @@ Compare means:
 - With care: same meaning and unit, but measured or derived differently.
 - No: the two columns hold different things under one name.
 
-| ALS TDI r2 name | Name in r2.5 and Answer ALS r8 | Match | Compare | Why |
+| ALS TDI Release 2 name | Answer ALS Release 8 name | Match | Compare | Why |
 |---|---|---|---|---|
 | Participant_ID | Participant_ID | exact | No | Join key only. Both are prefix plus GUID; the two cohorts are different people. |
 | GUID | GUID | exact | No | Join key only. |
@@ -39,12 +39,12 @@ Compare means:
 
 ## The EH name trap
 
-In ALS TDI Release 2, EH_C9orf72 and EH_ATXN2 are repeat lengths and Has_EH_C9orf72 / Has_EH_ATXN2 are the availability flags. In Answer ALS, and in ALS TDI Release 2.5, EH_C9orf72 and EH_ATXN2 are the availability flags. So EH_C9orf72 means a different column depending on which ALS TDI release you hold. Check the release before you read an EH column.
+In ALS TDI Release 2, EH_C9orf72 and EH_ATXN2 are repeat lengths and Has_EH_C9orf72 / Has_EH_ATXN2 are the availability flags. In Answer ALS, EH_C9orf72 and EH_ATXN2 are the availability flags. So EH_C9orf72 means a different column depending on which cohort's index you hold. Check the cohort before you read an EH column.
 
 ## Columns with no counterpart
 
-The other 14 ALS TDI columns have no Answer ALS match and keep their ALS TDI name: Country, Region, GENOMICS_TIMEPOINTS_AVAILABLE, HAS_PROTEOMICS_TIMEPOINT, HAS_TRANSCRIPTOMICS_TIMEPOINT, TRANSCRIPTOMICS_TIMEPOINTS_AVAILABLE, Age_At_Sign_Up, Current_Age, Total_Blood_Draw, Total_ALSFRS, Total_Tracker, Total_Voice_Recording, Sign_Up_Date_Year and Three_or_More_Data_Points. Total_Blood_Draw counts blood draws and is not the same as Answer ALS Number_of_Visits, which counts clinic visits.
+The other 14 ALS TDI columns have no Answer ALS match: Country, Region, GENOMICS_TIMEPOINTS_AVAILABLE, HAS_PROTEOMICS_TIMEPOINT, HAS_TRANSCRIPTOMICS_TIMEPOINT, TRANSCRIPTOMICS_TIMEPOINTS_AVAILABLE, Age_At_Sign_Up, Current_Age, Total_Blood_Draw, Total_ALSFRS, Total_Tracker, Total_Voice_Recording, Sign_Up_Date_Year and Three_or_More_Data_Points. Total_Blood_Draw counts blood draws and is not the same as Answer ALS Number_of_Visits, which counts clinic visits.
 
 ## Source
 
-CROSSWALK.csv (names and match type) and the notes of the ALS TDI Release 2.5 build (vocabulary differences).
+CROSSWALK.csv (names and match type) and the notes of the ALS TDI index builds (vocabulary differences).
